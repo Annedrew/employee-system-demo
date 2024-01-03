@@ -11,7 +11,7 @@ app.use(express.json());
 const db = mysql.createConnection({
     user: "root",
     host: "localhost",
-    password: "your password",
+    password: "password",
     database: "employeeSystem"
 });
 
@@ -61,6 +61,18 @@ app.put("/update", (req, res) => {
       }
     );
   });  
+
+  app.delete("/delete/:id", (req, res) => {
+    const id = req.params.id;
+    db.query("DELETE FROM employee WHERE id = ?", id, (err, result) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.send(result);
+      }
+    });
+  });
+  
 
 // The first thing to do is to open the server's ears!
 app.listen(3001, () => {
