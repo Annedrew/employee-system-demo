@@ -35,6 +35,12 @@ function App() {
     });
   };
 
+  const showEmployee = () => {
+    Axios.get("http://localhost:3001/employee").then((response) => {
+      setEmployeeList(response.data);
+    });
+  };
+
   return (
     <div className="information">
       <label>Name: </label>
@@ -58,6 +64,22 @@ function App() {
         setWage(event.target.value);
       }}/>
       <button onClick={addEmployee}>Add Employee</button>
+      <hr/>
+      <div>
+        <button onClick={showEmployee}>Show Employee</button>
+        
+        {employeeList.map((val, key) => (
+        <div className="employee" key={key}>
+          <div>
+            <h3>Name: {val.name}</h3>
+            <h3>Age: {val.age}</h3>
+            <h3>Country: {val.country}</h3>
+            <h3>Position: {val.position}</h3>
+            <h3>Wage: {val.wage}</h3>
+          </div>
+        </div>
+      ))}
+      </div>
     </div>
   );
 }

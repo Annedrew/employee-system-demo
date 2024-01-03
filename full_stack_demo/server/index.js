@@ -36,6 +36,16 @@ app.post("/create", (req, res) => {
     );
 });
 
+app.get("/employee", (req, res) => {
+    db.query("SELECT * FROM employee", (err, result) => {
+        if(err) {
+            console.log(err);
+        } else {
+            res.send(result)
+        }
+    });
+});
+
 // The first thing to do is to open the server's ears!
 app.listen(3001, () => {
     console.log("The server is running on port 3001")
