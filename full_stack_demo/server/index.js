@@ -46,6 +46,22 @@ app.get("/employee", (req, res) => {
     });
 });
 
+app.put("/update", (req, res) => {
+    const id = req.body.id;
+    const wage = req.body.wage;
+    db.query(
+      "UPDATE employee SET wage = ? WHERE id = ?",
+      [wage, id],
+      (err, result) => {
+        if (err) {
+          console.log(err);
+        } else {
+          res.send(result);
+        }
+      }
+    );
+  });  
+
 // The first thing to do is to open the server's ears!
 app.listen(3001, () => {
     console.log("The server is running on port 3001")
