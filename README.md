@@ -1,4 +1,4 @@
-`Node.js`: [Node.js] Basic grammar review.
+`Node.js`: [Node.js] Syntax review.
 
 # full_stack_demo 
 An employee system implemented by Express.js that can add, show, and delete employee information.
