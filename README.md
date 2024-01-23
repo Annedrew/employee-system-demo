@@ -1,4 +1,5 @@
-`Node.js`: [Node.js] Syntax review.
+# Employee System Demo
 
-# full_stack_demo 
-An employee system implemented by Express.js that can add, show, and delete employee information.
+Tech Stack: React, Express.js, JavaScript, MySQL
+
+An employee system that can add, show, and delete employee information.
