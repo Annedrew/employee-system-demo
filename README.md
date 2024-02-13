@@ -15,5 +15,7 @@ npm start
 Run server:
 ```
 cd full_stack_demo/server
-
+node index.js
 ```
+Note:
+Before running the server, the MySQL database needs to be turned on.
